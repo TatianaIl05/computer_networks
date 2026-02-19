@@ -15,5 +15,4 @@ for domain in domains_to_ping:
 
 with open('results.csv','w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(results[0])
-    writer.writerows(results[1:])
+    writer.writerows(results[:])
