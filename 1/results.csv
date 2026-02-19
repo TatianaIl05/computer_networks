@@ -1,0 +1,11 @@
+domain,min_rtt(ms),rtt(ms),max_rtt(ms),packets_lost
+lamoda.ru,32.2,59.4,78.7,0
+dns-shop.ru,51.6,60.6,70.2,0
+habr.com,15.9,21.8,28.6,0
+kinopoisk.ru,83.3,108.4,124.6,0
+eldorado.ru,99.4,114.7,127.1,0
+labirint.ru,64.9,101.8,125.4,0
+ok.ru,101.0,113.7,121.8,0
+kaggle.com,108.9,111.1,112.3,0
+google.com,97.7,106.6,121.2,0
+rt.ru,98.6,115.9,124.7,0
