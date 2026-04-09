@@ -134,3 +134,4 @@ def save_results(results):
 if __name__ == "__main__":
     data = scrape_quotes()
     save_results(data)
+    
