@@ -50,9 +50,9 @@ def parse_quotes(url: str = Query(...)):
 
 
 @app.get("/get_data")
-def get_data(limit: Optional[int] = None, offset: int = 0, author: Optional[str] = None):
+def get_data():
 
-    quotes = database.get_all_quotes(limit, offset, author)
+    quotes = database.get_all_quotes()
     
     if not quotes:
         return {
@@ -75,6 +75,7 @@ def clean_database(confirm: bool = Query(False)):
     
     try:
         database.clean_db()
+        return {"status": "success", "message": "Database cleaned"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
