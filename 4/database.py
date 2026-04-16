@@ -57,25 +57,14 @@ class Database:
             
             return len(quotes_data)
     
-    def get_all_quotes(self, limit: Optional[int] = None, offset = 0, author: Optional[str] = None):
+    def get_all_quotes(self):
         with self.conn.cursor() as cur:
             query = """
                 SELECT id, page_num, quote, author, tags, author_birth_date, source_url, created_at
                 FROM quotes
             """
-            params = []
-            
-            if author:
-                query += " WHERE author ILIKE %s"
-                params.append(f'%{author}%')
-            
-            query += " ORDER BY created_at DESC"
-            
-            if limit:
-                query += " LIMIT %s OFFSET %s"
-                params.extend([limit, offset])
-            
-            cur.execute(query, params)
+    
+            cur.execute(query)
             rows = cur.fetchall()
             
             return [
@@ -100,3 +89,4 @@ class Database:
     def close(self):
         if self.conn:
             self.conn.close()
+            
