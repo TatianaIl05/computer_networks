@@ -1,4 +1,5 @@
 from typing import Optional
+from contextlib import asynccontextmanager
 
 import uvicorn
 from fastapi import FastAPI, Query, HTTPException
@@ -10,7 +11,13 @@ from database import Database
 parser = Parser()
 database = Database()
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    yield
+    database.close() 
+    parser.close()   
+
+app = FastAPI(lifespan=lifespan)
 
 
 @app.get("/parse")
