@@ -119,3 +119,7 @@ class Parser:
         
         return results
     
+    def close(self):
+        if self.driver:
+            self.driver.quit()
+    
