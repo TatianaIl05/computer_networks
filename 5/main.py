@@ -79,12 +79,3 @@ def clean_database(confirm: bool = Query(False)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="127.0.0.1",
-        port=80,
-        reload=True
-    )
-
