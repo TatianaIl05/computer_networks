@@ -7,7 +7,7 @@ curl http://localhost/parse?url=https://quotes.toscrape.com
 ```
 curl -L http://localhost/parse?url=https://quotes.toscrape.com
 ```
-<h1>ВАМ СЮДА НЕЛЬЗЯ</h1>
+ВАМ СЮДА НЕЛЬЗЯ
 ```
 sudo sed -i 's/default 1;/default 0;/' /etc/nginx/sites-available/parser-proxy
 sudo service nginx restart
