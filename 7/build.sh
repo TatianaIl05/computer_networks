@@ -21,7 +21,7 @@ server {
     server_name localhost _;
 
     location = /blocked {
-        # internal;
+        internal;
         add_header Content-Type "text/html; charset=utf-8";
         return 200 '<h1>ВАМ СЮДА НЕЛЬЗЯ</h1>';
     }
