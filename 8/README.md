@@ -44,7 +44,7 @@ chmod +x build.sh
 ### Просмотр результатов (блок российских IP):
 
 http://178.20.47.174/get_data - просмотреть данные после парсинга
-http://178.20.47.174/get_data - запустить парсинг
+http://178.20.47.174/parse?url=https://quotes.toscrape.com - запустить парсинг
 ```
 curl -X DELETE "http://178.20.47.174/clean_db?confirm=true"
 ```
