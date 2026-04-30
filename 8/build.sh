@@ -9,7 +9,7 @@ curl -s https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone |
     awk '{print "    " $0 " 1;"}' | 
     sudo tee /etc/nginx/conf.d/geo_lists/ru_ips.conf > /dev/null
 
-sudo tee /etc/nginx/sites-available/parser-proxy > /dev/null << 'EOF'
+sudo tee /etc/nginx/conf.d/parser-proxy.conf > /dev/null << 'EOF'
 geo $is_ru {
     default 0;
     include /etc/nginx/conf.d/geo_lists/ru_ips.conf;
