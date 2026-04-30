@@ -45,5 +45,7 @@ chmod +x build.sh
 
 http://178.20.47.174/get_data - просмотреть данные после парсинга
 http://178.20.47.174/get_data - запустить парсинг
-
-curl -X DELETE "http://178.20.47.174/clean_db?confirm=true"- удалить данные
+```
+curl -X DELETE "http://178.20.47.174/clean_db?confirm=true"
+```
+- удалить данные
