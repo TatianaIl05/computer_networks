@@ -29,7 +29,7 @@ docker exec container1 ping6 -c 3 $IPV6
 
 sleep 2
 
-echo "ЗАХВАЧЕННЫЕ IPv6 ПАКЕТЫ"
+echo "ЗАХВАЧЕННЫЕ IPv6 ПАКЕТЫ:"
 docker exec container1 tcpdump -r /tmp/ipv6.pcap -n 2>/dev/null
 
 docker exec container1 tcpdump -i eth0 -c 4 -n icmp6 -w /tmp/ndp.pcap 2>/dev/null & sleep 1
