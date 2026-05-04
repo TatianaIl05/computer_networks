@@ -44,7 +44,8 @@ def traceroute(target, max_hops=30, timeout=3):
 
 def save_results(results, csv_filename="dns_traceroute_results.csv"):
     with open(csv_filename, 'w', newline='', encoding='utf-8-sig') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=['domain', 'ipv4_addresses', 'selected_ip', 'traceroute_summary', 'total_hops', 'last_hop_ip'], delimiter=',')
+        writer = csv.DictWriter(csvfile, fieldnames=['domain', 'ipv4_addresses', 'selected_ip', 'traceroute_summary', 
+                                                     'total_hops', 'last_hop_ip'], delimiter=',')
         
         writer.writeheader()
         writer.writerows(results)
@@ -55,7 +56,8 @@ def main():
     for domain in DOMAINS:
         ipv4_addresses = dns_lookup(domain)
         if not ipv4_addresses:
-            results.append({'domain': domain, 'ipv4_addresses': 'N/A', 'selected_ip': 'N/A', 'traceroute_summary': 'DNS lookup failed', 'total_hops': 0, 'last_hop_ip': 'N/A'})
+            results.append({'domain': domain, 'ipv4_addresses': 'N/A', 'selected_ip': 'N/A', 'traceroute_summary': 'DNS lookup failed', 
+                            'total_hops': 0, 'last_hop_ip': 'N/A'})
             continue
         
         all_ips = ", ".join(ipv4_addresses[:5])
@@ -66,7 +68,8 @@ def main():
         hops = traceroute(target_ip, MAX_HOPS, TIMEOUT)
         
         if not hops:
-            results.append({'domain': domain, 'ipv4_addresses': all_ips, 'selected_ip': target_ip, 'traceroute_summary': 'Traceroute failed', 'total_hops': 0, 'last_hop_ip': 'N/A'})
+            results.append({'domain': domain, 'ipv4_addresses': all_ips, 'selected_ip': target_ip, 'traceroute_summary': 'Traceroute failed', 
+                            'total_hops': 0, 'last_hop_ip': 'N/A'})
             continue
         
         last_success = None
