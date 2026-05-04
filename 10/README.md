@@ -8,6 +8,16 @@ $googleIPs
 $targetIP = $googleIPs[0]
 tracert -d $targetIP
 ```
+или для Linux:
+```
+googleIPs=($(dig +short google.com | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$'))
+printf '%s\n' "${googleIPs[@]}"
+```
+```
+targetIP=${googleIPs[0]}
+traceroute -n $targetIP
+```
+
 Пример вывода:
   1     2 ms     2 ms    51 ms  172.20.10.1 
   2     *        *        *     Превышен интервал ожидания для запроса.
