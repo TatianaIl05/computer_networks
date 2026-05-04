@@ -5,7 +5,7 @@
 06:02:29.103215 IP 172.26.0.3 > 172.26.0.2: ICMP echo reply, id 21, seq 1, length 64
 06:02:30.103332 IP 172.26.0.2 > 172.26.0.3: ICMP echo request, id 21, seq 2, length 64
 
-ЗАХВАЧЕННЫЕ IPv6 ПАКЕТЫ
+ЗАХВАЧЕННЫЕ IPv6 ПАКЕТЫ:
 06:02:33.329119 IP6 2001:db8:3::2 > ff02::1:ff00:3: ICMP6, neighbor solicitation, who has 2001:db8:3::3, length 32
 06:02:33.329203 IP6 2001:db8:3::3 > 2001:db8:3::2: ICMP6, neighbor advertisement, tgt is 2001:db8:3::3, length 32
 06:02:33.329213 IP6 2001:db8:3::2 > 2001:db8:3::3: ICMP6, echo request, id 39, seq 0, length 64
